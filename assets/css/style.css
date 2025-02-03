@@ -1,0 +1,227 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+html {
+  font-size: 100%;
+}
+html,
+body {
+  scroll-behavior: smooth;
+}
+body {
+  font-family: 'Poppins';
+  font-size: 16px;
+  line-height: 20px;
+  background: #ffffff;
+}
+/* define font-size */
+h1 {
+  font-size: clamp(1.5rem, 1.3rem + 1vw, 2.5rem);
+  line-height: clamp(1.8rem, 1.56rem + 1.2vw, 3rem);
+  font-weight: 500;
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+p {
+}
+/* header */
+header {
+  background: #ffffff;
+}
+header .navbar .container {
+  background-color: #fdfcfc;
+  padding: 10px 20px;
+  border: 1px solid #000000;
+}
+header .navbar {
+  padding: 0;
+}
+.navbar-brand {
+  font-size: clamp(1.25rem, 1.0717rem + 0.8915vw, 2rem);
+  line-height: clamp(1.5rem, 1.286rem + 1.0698vw, 2.4rem);
+  font-weight: bold;
+}
+.navbar-brand span {
+  color: #c91717;
+}
+header .navbar .navbar-nav .nav-item a {
+  color: #000000 !important;
+  cursor: pointer;
+  text-transform: uppercase;
+  font-weight: 400;
+}
+.offcanvas.offcanvas-end .btn-close {
+  display: none;
+}
+
+.offcanvas.offcanvas-end.show .btn-close {
+  display: block;
+  position: absolute;
+  right: 20px;
+  top: 20px;
+}
+
+/* End Header */
+/* Hero Section */
+.hero-section {
+  text-align: center;
+  padding: 200px 20px 45px;
+}
+.hero-section img {
+  max-width: 100%;
+  height: auto;
+  padding-top: 45px;
+}
+.content-area {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
+}
+.content-area p {
+  width: calc(100% - 40%);
+  font-size: 15px;
+  line-height: 20px;
+}
+/* End Hero Section */
+/* Additional Content */
+.addtional-content {
+  padding: 45px 20px 200px;
+}
+/* End Additional Content */
+/* Footer Section */
+.footer {
+  color: white;
+  padding: 90px 20px 0px;
+}
+.footer .footer-container .container {
+  background-color: #7c7878;
+}
+.footer .footer-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.footer .footer-container .container:last-child {
+  padding: 60px 0 20px;
+}
+.footer .footer-container .container:first-child {
+  padding: 60px 0 0px;
+}
+
+.footer .footer-logo {
+  color: #000000;
+  text-decoration: none;
+  font-size: clamp(1.5rem, 1.2623rem + 1.1887vw, 2.5rem);
+  line-height: clamp(1.8rem, 1.5147rem + 1.4264vw, 3rem);
+  font-weight: 700;
+}
+.footer .footer-logo span {
+  color: #c91717;
+  font-weight: bold;
+}
+.footer .footer-nav {
+  list-style-type: none;
+  padding: 0;
+}
+.footer .footer-nav li {
+  display: inline-block;
+  padding: 0 15px 10px;
+}
+.footer .footer-nav a {
+  cursor: pointer;
+  color: #ffffff;
+  text-decoration: none;
+}
+/* End Footer Section */
+
+/* Media Query */
+/* Laptop */
+@media screen and (min-width: 1125px) and (max-width: 1366px) {
+  .addtional-content {
+    padding: 45px 20px 150px;
+  }
+  .hero-section {
+    padding: 150px 20px 45px;
+  }
+  .content-area p {
+    width: calc(100% - 30%);
+  }
+  .footer .footer-nav li {
+    padding: 0 5px 10px;
+  }
+}
+/* Tablet */
+@media screen and (max-width: 1024px) {
+  .content-area p {
+    width: calc(100% - 15%);
+  }
+  .addtional-content {
+    padding: 30px 20px 100px;
+  }
+  .hero-section {
+    text-align: center;
+    padding: 100px 20px 30px;
+  }
+
+  .hero-section img {
+    gap: 10px;
+  }
+  .footer .footer-container .container:last-child {
+    padding: 30px 0 30px;
+  }
+  .footer .footer-container .container:first-child {
+    padding: 0;
+  }
+}
+/* Tablet horizontal */
+@media screen and (min-width: 1025px) and (max-width: 1124px) {
+  .addtional-content {
+    padding: 30px 20px 100px;
+  }
+  .hero-section {
+    text-align: center;
+    padding: 100px 20px 30px;
+  }
+}
+/* Mobile */
+@media screen and (max-width: 991px) {
+  .offcanvas.offcanvas-end .navbar-nav {
+    margin: 100px 20px !important;
+    text-align: center;
+  }
+}
+@media screen and (max-width: 767px) {
+  .footer {
+    background-color: #7c7878;
+  }
+  .content-area p {
+    width: auto;
+  }
+  .addtional-content {
+    padding: 30px 10px 60px;
+  }
+  .hero-section {
+    text-align: center;
+    padding: 60px 10px 30px;
+  }
+
+  .footer .footer-nav li {
+    display: inline-block;
+    padding: 0 10px 10px;
+  }
+
+  .hero-section img {
+    padding-top: 10px;
+  }
+  .offcanvas.offcanvas-end {
+    width: 250px;
+  }
+}
