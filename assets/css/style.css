@@ -10,7 +10,7 @@ body {
   scroll-behavior: smooth;
 }
 body {
-  font-family: 'Poppins';
+  font-family: 'Montserrat';
   font-size: 16px;
   line-height: 20px;
   background: #ffffff;
@@ -30,32 +30,26 @@ h4 {
 p {
 }
 /* header */
-header {
-  background: #ffffff;
-}
-header .navbar .container {
+.nav-header {
   background-color: #fdfcfc;
   padding: 10px 20px;
-  border: 1px solid #000000;
+  border: 1px solid #0a0000;
 }
 header .navbar {
   padding: 0;
 }
-.navbar-brand {
-  font-size: clamp(1.25rem, 1.0717rem + 0.8915vw, 2rem);
-  line-height: clamp(1.5rem, 1.286rem + 1.0698vw, 2.4rem);
-  font-weight: bold;
-}
-.navbar-brand span {
-  color: #c91717;
+
+.navbar-brand img {
+  width: 75%;
+  height: auto;
 }
 header .navbar .navbar-nav .nav-item a {
-  color: #000000 !important;
+  color: #0a0000 !important;
   cursor: pointer;
   text-transform: uppercase;
-  font-weight: 400;
-  font-size: clamp(1rem, 0.975rem + 0.125vw, 1.125rem);
-  line-height: clamp(1.25rem, 1.225rem + 0.125vw, 1.375rem);
+  font-weight: 500;
+  font-size: clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem);
+  line-height: clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem);
 }
 .offcanvas.offcanvas-end .btn-close {
   display: none;
@@ -75,7 +69,7 @@ header .navbar .navbar-nav .nav-item a {
   padding: 200px 20px 45px;
 }
 .hero-section img {
-  max-width: 100%;
+  width: 78%;
   height: auto;
   padding-top: 45px;
 }
@@ -88,8 +82,8 @@ header .navbar .navbar-nav .nav-item a {
 }
 .content-area p {
   width: calc(100% - 40%);
-  font-size: 15px;
-  line-height: 20px;
+  font-size: clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem);
+  line-height: clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem);
 }
 /* End Hero Section */
 /* Additional Content */
@@ -100,47 +94,42 @@ header .navbar .navbar-nav .nav-item a {
 /* Footer Section */
 .footer {
   color: white;
-  padding: 90px 20px 0px;
-}
-.footer .footer-container .container {
-  background-color: #7c7878;
+  padding: 90px 20px 20px;
+  background-color: rgba(75, 69, 69, 0.73);
 }
 .footer .footer-container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-}
-.footer .footer-container .container:last-child {
-  padding: 60px 0 20px;
-}
-.footer .footer-container .container:first-child {
-  padding: 60px 0 0px;
+  gap: 60px;
 }
 
-.footer .footer-logo {
-  color: #000000;
-  text-decoration: none;
-  font-size: clamp(1.5rem, 1.2623rem + 1.1887vw, 2.5rem);
-  line-height: clamp(1.8rem, 1.5147rem + 1.4264vw, 3rem);
-  font-weight: 700;
-}
-.footer .footer-logo span {
-  color: #c91717;
-  font-weight: bold;
+.footer .footer-logo img {
+  width: 25%;
+  height: auto;
 }
 .footer .footer-nav {
   list-style-type: none;
   padding: 0;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 20px;
 }
 .footer .footer-nav li {
   display: inline-block;
-  padding: 0 15px 10px;
+  padding: 0 0 10px;
 }
 .footer .footer-nav a {
   cursor: pointer;
   color: #ffffff;
   text-decoration: none;
+  font-weight: 400;
+  font-size: clamp(0.9375rem, 0.925rem + 0.0625vw, 1rem);
+  line-height: clamp(1.125rem, 1.1rem + 0.125vw, 1.25rem);
 }
 /* End Footer Section */
 
@@ -157,11 +146,18 @@ header .navbar .navbar-nav .nav-item a {
     width: calc(100% - 30%);
   }
   .footer .footer-nav li {
-    padding: 0 5px 10px;
+    padding: 0 10px 10px;
   }
 }
 /* Tablet */
 @media screen and (max-width: 1024px) {
+  .navbar-brand img {
+    width: 66%;
+  }
+  header .navbar .navbar-nav .nav-item a {
+    font-size: 12px;
+    line-height: 18px;
+  }
   .content-area p {
     width: calc(100% - 15%);
   }
@@ -175,12 +171,6 @@ header .navbar .navbar-nav .nav-item a {
 
   .hero-section img {
     gap: 10px;
-  }
-  .footer .footer-container .container:last-child {
-    padding: 30px 0 30px;
-  }
-  .footer .footer-container .container:first-child {
-    padding: 0;
   }
 }
 /* Tablet horizontal */
@@ -199,10 +189,16 @@ header .navbar .navbar-nav .nav-item a {
     margin: 100px 20px !important;
     text-align: center;
   }
+  header .navbar .container {
+    flex-wrap: nowrap;
+  }
+  .footer .footer-logo img {
+    width: 50%;
+  }
 }
 @media screen and (max-width: 767px) {
   .footer {
-    background-color: #7c7878;
+    background-color: rgb(75, 69, 69, 0.73);
   }
   .content-area p {
     width: auto;
@@ -225,5 +221,13 @@ header .navbar .navbar-nav .nav-item a {
   }
   .offcanvas.offcanvas-end {
     width: 250px;
+  }
+  .footer .footer-container {
+    gap: 30px;
+  }
+}
+@media (max-width: 567px) {
+  .footer .footer-logo img {
+    width: 100%;
   }
 }
