@@ -4,75 +4,194 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Visual Job Search | Candogram</title>
-    <link
-      href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="./assets/css/style.css" />
+    <script src="https://cdn.tailwindcss.com"></script>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,100..900;1,100..900&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap"
       rel="stylesheet"
     />
+    <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
-  <body>
+  <body class="bg-white font-montserrat text-base leading-5 scroll-smooth">
     <!-- Header -->
-    <header class="nav-header">
+    <header class="bg-nav-bg px-5 py-2.5 border border-[#0a0000]">
       <!-- Navbar -->
-      <nav class="navbar navbar-expand-lg navbar-light">
-        <div class="container">
-          <a class="navbar-brand" href="/index.html">
+      <nav class="container mx-auto">
+        <div class="flex items-center justify-between">
+          <a href="/index.html" class="w-3/4 lg:w-1/4">
             <img
               src="./assets/src/images/candogram-site-logo.svg"
               alt="candogram-site-logo"
-          /></a>
+              class="w-3/4 h-auto"
+            />
+          </a>
+          <!-- Hamburger Menu Button -->
           <button
-            class="navbar-toggler"
+            class="lg:hidden flex flex-col justify-center items-center w-8 h-8"
             type="button"
-            data-bs-toggle="offcanvas"
-            data-bs-target="#navbarOffcanvasLg"
-            aria-controls="navbarOffcanvasLg"
+            onclick="toggleMenu()"
             aria-label="Toggle navigation"
           >
-            <span class="navbar-toggler-icon"></span>
+            <span class="block w-6 h-0.5 bg-black mb-1"></span>
+            <span class="block w-6 h-0.5 bg-black mb-1"></span>
+            <span class="block w-6 h-0.5 bg-black"></span>
           </button>
-          <div
-            class="offcanvas offcanvas-end"
-            tabindex="-1"
-            id="navbarOffcanvasLg"
-            aria-labelledby="navbarOffcanvasLgLabel"
-          >
-            <button
-              type="button"
-              class="btn-close"
-              data-bs-dismiss="offcanvas"
-              aria-label="Close"
-            ></button>
-
-            <ul class="navbar-nav ms-auto">
-              <li class="nav-item">
-                <a class="nav-link" href="/index.html">Home</a>
+          <!-- Desktop Menu -->
+          <div class="hidden lg:block">
+            <ul class="lg:flex lg:space-x-6">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Home</a
+                >
               </li>
-              <li class="nav-item"><a class="nav-link" href="">Login</a></li>
-              <li class="nav-item"><a class="nav-link" href="">Sign Up</a></li>
-              <li class="nav-item"><a class="nav-link" href="">Contact</a></li>
-              <li class="nav-item"><a class="nav-link" href="">About</a></li>
-              <li class="nav-item"><a class="nav-link" href="">Pricing</a></li>
-              <li class="nav-item">
-                <a class="nav-link" href="#">Job Market Education</a>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Sign Up</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Job Market Education</a
+                >
               </li>
             </ul>
           </div>
+
+          <!-- Off-canvas Menu -->
+          <div
+            class="nav-menu fixed top-0 right-0 w-64 h-full bg-white shadow-lg transform translate-x-full lg:hidden"
+          >
+            <!-- Close Button -->
+            <button
+              onclick="toggleMenu()"
+              class="absolute top-4 right-4 p-2"
+              aria-label="Close menu"
+            >
+              <svg
+                class="w-6 h-6"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  stroke-linecap="round"
+                  stroke-linejoin="round"
+                  stroke-width="2"
+                  d="M6 18L18 6M6 6l12 12"
+                />
+              </svg>
+            </button>
+            <!-- Mobile Menu Items -->
+            <ul class="flex flex-col pt-16 px-6 space-y-4">
+              <li>
+                <a
+                  href="/index.html"
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Home</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Login</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Sign Up</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Contact</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >About</a
+                >
+              </li>
+              <li>
+                <a
+                  href=""
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Pricing</a
+                >
+              </li>
+              <li>
+                <a
+                  href="#"
+                  class="text-[#0a0000] uppercase font-medium text-sm hover:text-gray-600"
+                  >Job Market Education</a
+                >
+              </li>
+            </ul>
+          </div>
+
+          <!-- Overlay -->
+          <div
+            id="overlay"
+            class="fixed inset-0 bg-black opacity-50 hidden lg:hidden"
+            onclick="toggleMenu()"
+          ></div>
         </div>
       </nav>
     </header>
+
     <!-- Hero Section -->
-    <section class="hero-section">
-      <div class="container">
-        <div class="content-area">
-          <h1>WELCOME TO THE VISUAL JOB SEARCH BY CANDOGRAM</h1>
-          <p>
+    <section class="py-20 px-5 md:py-32 lg:py-52">
+      <div class="container mx-auto">
+        <div class="flex flex-col items-center justify-center gap-5">
+          <h1
+            class="text-2xl md:text-3xl lg:text-4xl font-medium leading-normal"
+          >
+            WELCOME TO THE VISUAL JOB SEARCH BY CANDOGRAM
+          </h1>
+          <p
+            class="w-full md:w-4/5 lg:w-3/5 text-sm md:text-base leading-relaxed text-center"
+          >
             Topping caramels powder muffin pudding oat cake marzipan jujubes.
             Cookie tootsie roll cotton candy dessert pastry tootsie roll apple
             pie. Candy gummi bears caramels wafer pastry chupa chups lemon
@@ -83,16 +202,21 @@
           <img
             src="./assets/src/images/hero-image.png"
             alt="Visual Job Search Image"
+            class="w-4/5 h-auto pt-10 md:pt-6"
           />
         </div>
       </div>
     </section>
 
     <!-- Additional Content -->
-    <section class="addtional-content">
-      <div class="container text-center">
-        <div class="content-area">
-          <p>
+    <section class="px-5 py-8 md:py-16 lg:py-52">
+      <div class="container mx-auto">
+        <div
+          class="flex flex-col items-center justify-center gap-5 text-center"
+        >
+          <p
+            class="w-full md:w-4/5 lg:w-3/5 text-sm md:text-base leading-relaxed"
+          >
             Topping caramels powder muffin pudding oat cake marzipan jujubes.
             Cookie tootsie roll cotton candy dessert pastry tootsie roll apple
             pie. Candy gummi bears caramels wafer pastry chupa chups lemon
@@ -100,7 +224,9 @@
             candy muffin. Sweet roll halvah powder brownie sugar plum tiramisu
             topping.
           </p>
-          <p>
+          <p
+            class="w-full md:w-4/5 lg:w-3/5 text-sm md:text-base leading-relaxed"
+          >
             Topping caramels powder muffin pudding oat cake marzipan jujubes.
             Cookie tootsie roll cotton candy dessert pastry tootsie roll apple
             pie. Candy gummi bears caramels wafer pastry chupa chups lemon
@@ -108,7 +234,9 @@
             candy muffin. Sweet roll halvah powder brownie sugar plum tiramisu
             topping.
           </p>
-          <p>
+          <p
+            class="w-full md:w-4/5 lg:w-3/5 text-sm md:text-base leading-relaxed"
+          >
             Topping caramels powder muffin pudding oat cake marzipan jujubes.
             Cookie tootsie roll cotton candy dessert pastry tootsie roll apple
             pie. Candy gummi bears caramels wafer pastry chupa
@@ -118,52 +246,103 @@
     </section>
 
     <!-- Footer -->
-    <footer class="footer text-center">
-      <div class="container-fluid footer-container">
-        <div class="container">
-          <a class="footer-logo" href="/index.html">
+    <footer class="bg-footer-bg text-white px-5 pt-16 pb-5 md:pt-24">
+      <div class="container mx-auto">
+        <div class="flex flex-col items-center justify-center gap-8 md:gap-16">
+          <a href="/index.html" class="w-full sm:w-1/2 md:w-1/4">
             <img
               src="./assets/src/images/candogram-site-logo.svg"
               alt="candogram-site-logo"
-          /></a>
-        </div>
-        <div class="container">
-          <ul class="footer-nav">
-            <li>
-              <span><a href="/index.html">HOME</a></span>
+              class="w-full h-auto"
+            />
+          </a>
+          <ul class="flex flex-wrap justify-center gap-5">
+            <li class="px-2.5 pb-2.5">
+              <a
+                href="/index.html"
+                class="text-sm md:text-base hover:text-gray-300"
+                >HOME</a
+              >
             </li>
-            <li>
-              <span><a href="">LOGIN</a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >LOGIN</a
+              >
             </li>
-            <li>
-              <span><a href="">SIGN UP </a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >SIGN UP</a
+              >
             </li>
-            <li>
-              <span><a href="">CONTACT</a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >CONTACT</a
+              >
             </li>
-            <li>
-              <span><a href="">ABOUT</a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >ABOUT</a
+              >
             </li>
-            <li>
-              <span><a href="">PRICING </a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >PRICING</a
+              >
             </li>
-            <li>
-              <span><a href="">JOB MARKET EDUCATION </a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >JOB MARKET EDUCATION</a
+              >
             </li>
-            <li>
-              <span><a href="">RESET PASSWORD </a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >RESET PASSWORD</a
+              >
             </li>
-            <li>
-              <span><a href="">PRIVACY POLICY </a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >PRIVACY POLICY</a
+              >
             </li>
-            <li>
-              <span><a href="">TERMS & CONDITIONS</a></span>
+            <li class="px-2.5 pb-2.5">
+              <a href="" class="text-sm md:text-base hover:text-gray-300"
+                >TERMS & CONDITIONS</a
+              >
             </li>
           </ul>
         </div>
       </div>
     </footer>
-    <script src="./assets/js/script.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    <script type="text/javascripts" src="./assets/js/script.js"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            fontFamily: {
+              montserrat: ['Montserrat', 'sans-serif'],
+            },
+            backgroundColor: {
+              'nav-bg': '#fdfcfc',
+              'footer-bg': 'rgba(75, 69, 69, 0.73)',
+            },
+          },
+        },
+      }
+      function toggleMenu() {
+        const menu = document.querySelector('.nav-menu')
+        const overlay = document.getElementById('overlay')
+
+        if (menu.classList.contains('active')) {
+          menu.classList.remove('active')
+          overlay.classList.add('hidden')
+          document.body.style.overflow = ''
+        } else {
+          menu.classList.add('active')
+          overlay.classList.remove('hidden')
+          document.body.style.overflow = 'hidden'
+        }
+      }
+    </script>
   </body>
 </html>
